@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iasChange - Calculateur de change</title>
+  <link rel="stylesheet" href="change.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ===== AFFICHE PRINCIPALE ===== -->
+    <div class="affiche">
+
+      <!-- TITRE (double-clic pour accéder à l'admin) -->
+      <div class="titre" id="titrePrincipal">
+        💱 iasChange
+        <span class="admin-badge" id="adminBadge">🔑 Admin</span>
+      </div>
+      <div class="soustitre">CFA ↔ Ouguiya (MRO) ↔ CFA</div>
+
+      <!-- CALCULATEUR -->
+      <div class="calculateur">
+        <label id="labelCalcul">💸 Entrez un montant en CFA</label>
+        <div class="input-group">
+          <span class="devise-label" id="deviseFrom">CFA</span>
+          <input type="number" id="inputMontant" step="100" min="0" />
+          <span class="devise-label">→</span>
+          <div class="resultat" id="resultatConversion">0 MRO</div>
+        </div>
+        <button class="btn-inverser" id="btnInverser">🔄 Inverser la conversion</button>
+        <div class="taux-actuel">
+          Taux actuel : <span id="tauxDisplay">1 CFA = 0.74 MRO</span>
+        </div>
+      </div>
+
+      <!-- TÉLÉPHONE -->
+      <div class="tel">
+        📞 49 56 14 86
+        <small>Appels &amp; WhatsApp</small>
+      </div>
+
+      <!-- MOYENS DE PAIEMENT -->
+      <div class="paiement">
+        <div class="paiement-item">
+          <img src="assets/bankily.jpg" alt="Bankily" />
+          Bankily
+        </div>
+        <div class="paiement-item">
+          <img src="assets/masrvi.png" alt="Masrvi" />
+          Masrvi
+        </div>
+        <div class="paiement-item">
+          <img src="assets/seddad.png" alt="Seddad" />
+          Seddad
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== PANEL ADMIN (caché par défaut) ===== -->
+    <div class="admin-panel" id="adminPanel">
+      <h3>🔧 Administration - Modifier le taux</h3>
+      <div class="admin-row">
+        <label>1 CFA = </label>
+        <input type="number" id="tauxInput" step="0.001" min="0.001" />
+        <label>MRO</label>
+        <button class="btn" id="btnUpdate">✅ Mettre à jour</button>
+        <button class="btn btn-reset" id="btnReset">↺ Réinitialiser</button>
+      </div>
+      <div class="info">
+        💡 Les modifications sont automatiquement <span>sauvegardées</span> dans votre navigateur.
+        <br />🔒 Panel accessible uniquement avec le <span>mot de passe</span>.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== MODAL MOT DE PASSE ===== -->
+  <div class="modal-overlay" id="modalPassword">
+    <div class="modal">
+      <h2>🔑 Accès administrateur</h2>
+      <p>Veuillez entrer le mot de passe pour modifier le taux de change.</p>
+      <input type="password" id="inputPassword" placeholder="Entrez le mot de passe" autocomplete="off" />
+      <div class="erreur" id="erreurPassword">❌ Mot de passe incorrect !</div>
+      <div class="modal-buttons">
+        <button class="btn-modal btn-confirm" id="btnConfirmPassword">✅ Valider</button>
+        <button class="btn-modal btn-cancel" id="btnCancelPassword">❌ Annuler</button>
+      </div>
+    </div>
+  </div>
+  <script src="change.js"></script>
+  
+</body>
+</html>

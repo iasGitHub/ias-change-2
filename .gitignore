@@ -1,0 +1,7 @@
+# Fichiers de configuration (gardés privés)
+config.js
+
+# Fichiers sensibles
+*.env
+*.key
+*.pem
