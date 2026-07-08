@@ -1,0 +1,495 @@
+
+    /* ===== STYLES GÉNÉRAUX ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f1a0f;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    /* ===== AFFICHE PRINCIPALE ===== */
+    .affiche {
+      background: linear-gradient(145deg, #0b5e0b, #e6b800);
+      padding: 35px 30px 30px;
+      border-radius: 30px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      border: 2px solid #ffd700;
+      margin-bottom: 25px;
+    }
+
+    .titre {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0 #1a3a1a, 0 0 20px rgba(255, 215, 0, 0.5);
+      cursor: default;
+      user-select: none;
+      transition: transform 0.2s;
+    }
+
+    .titre:hover {
+      transform: scale(1.02);
+    }
+
+    .soustitre {
+      font-size: 22px;
+      background: rgba(0, 0, 0, 0.65);
+      display: inline-block;
+      padding: 8px 30px;
+      border-radius: 40px;
+      margin: 10px 0 20px;
+      font-weight: 600;
+    }
+
+    /* ===== CALCULATEUR ===== */
+    .calculateur {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1f3a1f;
+      padding: 20px;
+      border-radius: 18px;
+      margin: 15px 0 20px;
+      box-shadow: inset 0 0 0 2px #ffd700, 0 8px 0 #1f3a1f;
+    }
+
+    .calculateur label {
+      font-size: 18px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .input-group input {
+      padding: 12px 20px;
+      font-size: 20px;
+      border: 2px solid #0b5e0b;
+      border-radius: 12px;
+      width: 200px;
+      text-align: center;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: #e6b800;
+      box-shadow: 0 0 0 3px rgba(230, 184, 0, 0.3);
+    }
+
+    .input-group .resultat {
+      font-size: 28px;
+      font-weight: 900;
+      color: #0b5e0b;
+      background: #f0f0d0;
+      padding: 10px 25px;
+      border-radius: 12px;
+      min-width: 150px;
+      border: 2px solid #e6b800;
+    }
+
+    .input-group .devise-label {
+      font-size: 20px;
+      font-weight: 700;
+      min-width: 45px;
+    }
+
+    .btn-inverser {
+      margin-top: 12px;
+      padding: 8px 20px;
+      background: #0b5e0b;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-inverser:hover {
+      background: #0a4a0a;
+      transform: scale(1.05);
+    }
+
+    .taux-actuel {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #555;
+      font-weight: 600;
+    }
+
+    .taux-actuel span {
+      background: #0b5e0b;
+      color: #fff;
+      padding: 3px 12px;
+      border-radius: 20px;
+    }
+
+    /* ===== TABLEAU DES PRIX ===== */
+    .tableau {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1f3a1f;
+      padding: 18px 20px;
+      border-radius: 18px;
+      margin: 18px 0 22px;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: inset 0 0 0 2px #ffd700, 0 8px 0 #1f3a1f;
+    }
+
+    .ligne {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-bottom: 1px dashed #b3b3b3;
+    }
+
+    .ligne:last-child {
+      border-bottom: none;
+    }
+
+    .ligne span:first-child {
+      color: #0b5e0b;
+    }
+
+    .ligne span:last-child {
+      color: #a67c00;
+      font-weight: 800;
+    }
+
+    /* ===== TÉLÉPHONE ===== */
+    .tel {
+      font-size: 38px;
+      background: #000;
+      color: #ffd700;
+      display: inline-block;
+      padding: 12px 35px;
+      border-radius: 60px;
+      margin: 10px 0 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      border: 2px solid #ffd700;
+      box-shadow: 0 6px 0 #b8860b;
+    }
+
+    .tel small {
+      font-size: 16px;
+      font-weight: 400;
+      color: #ccc;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* ===== MOYENS DE PAIEMENT ===== */
+    .paiement {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px 30px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 16px 20px;
+      border-radius: 50px;
+      font-size: 20px;
+      font-weight: 700;
+      border: 2px solid #ffd700;
+    }
+
+    .paiement-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px 18px 6px 14px;
+      border-radius: 40px;
+    }
+
+    .paiement-item img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      padding: 4px;
+    }
+
+    /* ===== ADMIN PANEL (caché par défaut) ===== */
+    .admin-panel {
+      display: none;
+      background: #1a2a1a;
+      border: 2px solid #ffd700;
+      border-radius: 20px;
+      padding: 25px;
+      color: #fff;
+      margin-top: 20px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .admin-panel.visible {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .admin-panel h3 {
+      color: #ffd700;
+      font-size: 22px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .admin-panel .admin-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .admin-panel label {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .admin-panel input {
+      padding: 10px 15px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 2px solid #ffd700;
+      background: #0f1a0f;
+      color: #fff;
+      width: 150px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .admin-panel input:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .admin-panel .btn {
+      padding: 10px 25px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      background: #ffd700;
+      color: #0b5e0b;
+    }
+
+    .admin-panel .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .admin-panel .btn-reset {
+      background: #444;
+      color: #fff;
+    }
+
+    .admin-panel .btn-reset:hover {
+      background: #666;
+    }
+
+    .admin-panel .info {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .admin-panel .info span {
+      color: #ffd700;
+      font-weight: 700;
+    }
+
+    /* ===== INDICATEUR ADMIN (petit badge) ===== */
+    .admin-badge {
+      display: none;
+      background: #ffd700;
+      color: #0b5e0b;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .admin-badge.visible {
+      display: inline-block;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 550px) {
+      .titre {
+        font-size: 34px;
+      }
+      .tel {
+        font-size: 28px;
+        padding: 10px 20px;
+      }
+      .paiement {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border-radius: 30px;
+      }
+      .tableau {
+        font-size: 15px;
+        padding: 12px;
+      }
+      .input-group input {
+        width: 140px;
+        font-size: 16px;
+      }
+      .input-group .resultat {
+        font-size: 22px;
+        min-width: 120px;
+        padding: 8px 15px;
+      }
+      .admin-panel .admin-row {
+        flex-direction: column;
+      }
+      .admin-panel input {
+        width: 100%;
+      }
+    }
+
+    /* ===== MODAL MOT DE PASSE ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-overlay.visible {
+      display: flex;
+    }
+
+    .modal {
+      background: #1a2a1a;
+      border: 2px solid #ffd700;
+      border-radius: 25px;
+      padding: 40px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .modal h2 {
+      color: #ffd700;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .modal p {
+      color: #ccc;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .modal input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 12px;
+      background: #0f1a0f;
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    .modal input:focus {
+      border-color: #fff;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .modal .modal-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .modal .btn-modal {
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+      min-width: 120px;
+    }
+
+    .modal .btn-modal:hover {
+      transform: scale(1.05);
+    }
+
+    .modal .btn-confirm {
+      background: #ffd700;
+      color: #0b5e0b;
+    }
+
+    .modal .btn-cancel {
+      background: #444;
+      color: #fff;
+    }
+
+    .modal .btn-cancel:hover {
+      background: #666;
+    }
+
+    .modal .erreur {
+      color: #ff6b6b;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .modal .erreur.visible {
+      display: block;
+    }
