@@ -3,10 +3,7 @@
     //  VÉRIFICATION DE LA CONFIGURATION
     // ============================================================
 
-    if (typeof CONFIG === 'undefined') {
-      alert('⚠️ Fichier de configuration (config.js) manquant !\nVeuillez créer ce fichier avec vos paramètres.');
-      throw new Error('config.js manquant');
-    }
+
 
     // ============================================================
     //  CONFIGURATION - UTILISATION DES VARIABLES EXTERNES
