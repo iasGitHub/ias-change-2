@@ -2,8 +2,26 @@
     // ============================================================
     //  VÉRIFICATION DE LA CONFIGURATION
     // ============================================================
-
-
+    if (typeof CONFIG === 'undefined') {
+      console.warn('⚠️ CONFIG non défini, utilisation des valeurs par défaut');
+        var CONFIG = {
+          ADMIN_PASSWORD: "admin123",
+          DEFAULT_TAUX: 0.74,
+          TELEPHONE: "49 56 14 86",
+          MOYENS_PAIEMENT: [
+            { nom: "Bankily", icone: "B" },
+            { nom: "Masrvi", icone: "M" },
+            { nom: "Seddad", icone: "S" }
+          ],
+          MONTANTS_CFA: [5000, 10000, 15000, 20000, 30000, 50000, 100000],
+          THEME: {
+            primary: "#0b5e0b",
+            secondary: "#e6b800",
+            accent: "#ffd700",
+            dark: "#1a3a1a"
+          }
+        };
+    }
 
     // ============================================================
     //  CONFIGURATION - UTILISATION DES VARIABLES EXTERNES
